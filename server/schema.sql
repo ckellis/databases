@@ -8,12 +8,6 @@ CREATE TABLE rooms (
   PRIMARY KEY (rID)
 );
 
-CREATE TABLE users (
-  uID int NOT NULL AUTO_INCREMENT,
-  username varchar(20),
-  PRIMARY KEY (uID)
-);
-
 CREATE TABLE messages (
   /* Describe your table here.*/
   mID int NOT NULL AUTO_INCREMENT,
@@ -24,12 +18,20 @@ CREATE TABLE messages (
   FOREIGN KEY (rID) REFERENCES rooms(rID)
 );
 
+CREATE TABLE users (
+  uID int NOT NULL AUTO_INCREMENT,
+  username varchar(20),
+  PRIMARY KEY (uID),
+  FOREIGN KEY (mID) REFERENCES messages(mID)
+);
+
+
 
 
 /* Create other tables and define schemas for them here! */
 
 
- 
+
 
 /*  Execute this file from the command line by typing:
  *    mysql -u root < server/schema.sql
