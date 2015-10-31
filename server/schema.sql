@@ -14,16 +14,15 @@ CREATE TABLE messages (
   username varchar(20),
   textMSG varchar(100),
   roomname varchar(20),
-  -- rID int NOT NULL,
-  PRIMARY KEY (mID)
-  -- FOREIGN KEY (rID) REFERENCES rooms(rID)
+  uID int NOT NULL,
+  PRIMARY KEY (mID),
+  FOREIGN KEY (uID) REFERENCES users(uID)
 );
 
 CREATE TABLE users (
   uID int NOT NULL AUTO_INCREMENT,
   username varchar(20),
   PRIMARY KEY (uID)
-  -- FOREIGN KEY (mID) REFERENCES messages(mID)
 );
 
 
