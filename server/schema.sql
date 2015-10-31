@@ -2,27 +2,28 @@ CREATE DATABASE chat;
 
 USE chat;
 
-CREATE TABLE rooms (
-  rID int NOT NULL AUTO_INCREMENT,
-  roomname varchar(20),
-  PRIMARY KEY (rID)
-);
+-- CREATE TABLE rooms (
+--   rID int NOT NULL AUTO_INCREMENT,
+--   roomname varchar(20),
+--   PRIMARY KEY (rID)
+-- );
 
 CREATE TABLE messages (
   /* Describe your table here.*/
   mID int NOT NULL AUTO_INCREMENT,
   username varchar(20),
   textMSG varchar(100),
-  rID int NOT NULL,
-  PRIMARY KEY (mID),
-  FOREIGN KEY (rID) REFERENCES rooms(rID)
+  roomname varchar(20),
+  -- rID int NOT NULL,
+  PRIMARY KEY (mID)
+  -- FOREIGN KEY (rID) REFERENCES rooms(rID)
 );
 
 CREATE TABLE users (
   uID int NOT NULL AUTO_INCREMENT,
   username varchar(20),
-  PRIMARY KEY (uID),
-  FOREIGN KEY (mID) REFERENCES messages(mID)
+  PRIMARY KEY (uID)
+  -- FOREIGN KEY (mID) REFERENCES messages(mID)
 );
 
 
