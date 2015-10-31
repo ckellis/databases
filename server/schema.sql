@@ -8,6 +8,13 @@ USE chat;
 --   PRIMARY KEY (rID)
 -- );
 
+
+CREATE TABLE users (
+  uID int NOT NULL AUTO_INCREMENT,
+  username varchar(20),
+  PRIMARY KEY (uID)
+);
+
 CREATE TABLE messages (
   /* Describe your table here.*/
   mID int NOT NULL AUTO_INCREMENT,
@@ -16,14 +23,9 @@ CREATE TABLE messages (
   roomname varchar(20),
   uID int NOT NULL,
   PRIMARY KEY (mID),
-  FOREIGN KEY (uID) REFERENCES users(uID)
+  FOREIGN KEY (uID) REFERENCES users(uID) 
 );
 
-CREATE TABLE users (
-  uID int NOT NULL AUTO_INCREMENT,
-  username varchar(20),
-  PRIMARY KEY (uID)
-);
 
 
 
